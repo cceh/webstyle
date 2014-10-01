@@ -1,0 +1,85 @@
+@import 'colors';
+
+@mixin centered {
+	margin-left: 5em;
+	margin-right: 5em;
+	max-width: 90em;
+}
+
+@function image-url($image) {
+	@return url('../images/#{$image}');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	color: $text-color;
+	background-color: $frame-color;
+}
+
+body {
+	margin: 0;
+
+	> * {
+		padding: 2em;
+	}
+}
+
+header {
+	@include centered();
+
+	color: $text-color;
+	background-color: $background-color;
+
+	background-image: image-url('skyline.png');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+
+	border-bottom-right-radius: 1em;
+
+	min-height: 9em;
+	margin-top: 0;
+
+	line-height: 100%;
+
+	padding-top: 2em;
+
+	img {
+		vertical-align: middle;
+		display: inline-block;
+		float: left;
+	}
+
+	a {
+		text-decoration: none;
+		color: $text-color;
+	}
+
+	p:last-child a {
+		color: $link-color;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+main {
+	@include centered();
+
+	color: $text-color;
+	background-color: $background-color;
+}
+
+footer {
+	@include centered();
+
+	color: $text-color-inverted;
+	background-color: $background-color-inverted;
+
+	text-align: center;
+}
